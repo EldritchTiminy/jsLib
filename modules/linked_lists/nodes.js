@@ -126,7 +126,7 @@ class privateNode {
   };
   get value () {return this.#val;};
   set value (newValue) {this.#val = newValue;};
-  get link () {return this.#link};
+  get link () {return this.#link;};
   set link (newLink) {this.#link = newLink;};
 };
 
