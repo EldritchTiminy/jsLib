@@ -1,5 +1,6 @@
 // building node class to use with linked lists.
 
+// copy-paste from nodes.js privateNode class
 class privateNode {
   #val
   #link
@@ -20,10 +21,6 @@ class linkedList {
   constructor (value = null) {
     this._headNode = new privateNode(value)
   };
-  insertHead (newValue) {
-    let newNode = new privateNode(newValue, this._headNode);
-    this._headNode = newNode;
-  };
   stringifyList () {
     let listString = "";
     let currentNode = this.headNode;
@@ -33,11 +30,28 @@ class linkedList {
     };
     return listString;
   };
+  removeNode (removeVal) {
+    let currentNode = this._headNode;
+    if (currentNode.headNode === removeVal) {
+      this._headNode = headNode.link;
+    } else {
+      while (currentNode.link.value != removeVal) {
+        currentNode = currentNode.link;
+      };
+      currentNode.link = currentNode.link.link;
+    };
+  };
   get headNode () {return this._headNode};
+  set headNode (newValue) {
+    let newNode = new privateNode(newValue, this._headNode);
+    this._headNode = newNode;
+  };
 };
 
 let ll = new linkedList(5);
-ll.insertHead(70);
-ll.insertHead(5675);
-ll.insertHead(90);
-console.log(ll.stringifyList())
+ll.headNode = 70;
+ll.headNode = 5675;
+ll.headNode = 90;
+console.log(ll.stringifyList());
+ll.removeNode(5675);
+console.log(ll.stringifyList());
