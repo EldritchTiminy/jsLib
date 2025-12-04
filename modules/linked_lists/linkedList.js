@@ -14,8 +14,8 @@ class privateNode {
   set link (newLink) {this.#link = newLink;};
 };
 
-let myNode = new privateNode(44);
-console.log(myNode.value);
+/*let myNode = new privateNode(44);
+console.log(myNode.value);*/
 
 class linkedList {
   constructor (value = null) {
@@ -48,10 +48,10 @@ class linkedList {
   };
 };
 
-let ll = new linkedList(5);
+/*let ll = new linkedList(5);
 ll.headNode = 70;
 ll.headNode = 5675;
 ll.headNode = 90;
 console.log(ll.stringifyList());
 ll.removeNode(5675);
-console.log(ll.stringifyList());
+console.log(ll.stringifyList());*/
